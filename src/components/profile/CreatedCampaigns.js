@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig';
 import MyCampaigns from './MyCampaigns';
+import { useNavigate } from "react-router-dom";
 
 export default function CreatedCampaigns(props) {
-    const [myCampaigns, setMyCampaigns] = useState([]) 
+    const [myCampaigns, setMyCampaigns] = useState([])
+    
+    const navigate = useNavigate()
 
     const getMyCampaigns = () => {
         axios({
@@ -38,6 +41,7 @@ export default function CreatedCampaigns(props) {
             .then(() => {
                 props.reloadCampaign()
             })
+            .then(() => navigate('/profile'))
             .catch(err => console.log(err))
     }
  
