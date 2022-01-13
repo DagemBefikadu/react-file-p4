@@ -36,7 +36,7 @@ export default function CreatedCampaigns(props) {
         })
             .then(res => console.log('server response:', res))
             .then(() => {
-                getMyCampaigns()
+                props.reloadCampaign()
             })
             .catch(err => console.log(err))
     }

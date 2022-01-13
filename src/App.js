@@ -66,7 +66,7 @@ const App = () => {
       <Header user={user} />
       <Routes>
       <Route path="/" element={<Home msgAlert={msgAlert} user={user} />} />
-      <Route path="/profile" element={<Profile user={user} />} />
+      <Route path="/profile" element={<Profile user={user} reloadCampaign={getCampaign}/>} />
 		  <Route path="/campaigns" element={<CampaignList user={user} allCampaigns={allCampaigns} reloadCampaign={getCampaign} />} />
       <Route path="/campaigns/:id" element={<CampaignDetail user={user} />} />
         
