@@ -11,9 +11,10 @@ export default function NewComment(props) {
 
     const createdComment = (e) => {
         e.preventDefault()
-        console.log("this is params:", props.user._id)
+        console.log("this is params:", newParam.id)
+        // const newParams = "" + newParam
     axios({
-        url: apiUrl + `/campaigns/${newParam}/comments`,
+        url: apiUrl + `/campaigns/${newParam.id}/comments`,
         method: "POST",
         headers: {
 			Authorization: `Token token=${props.user.token}`,
@@ -27,6 +28,10 @@ export default function NewComment(props) {
         }   
     })
     .then((res) => console.log("server response:", res))
+    .then(() => {
+        props.refreshComment()
+        e.target.newComment.value = ""
+    })
     .catch((err) => console.log(err));
 }
 

@@ -15,6 +15,7 @@ import ChangePassword from "./components/auth/ChangePassword";
 import apiUrl from "./apiConfig";
 import CampaignList from "./components/campaign/CampaignList"
 import CampaignDetail from "./components/campaign/CampaignDetail"
+import Profile from "./components/profile/Profile"
 
 
 const App = () => {
@@ -64,15 +65,11 @@ const App = () => {
     <Fragment>
       <Header user={user} />
       <Routes>
-        <Route path="/" element={<Home msgAlert={msgAlert} user={user} />} />
-		<Route path="/campaigns" element={<CampaignList allCampaigns={allCampaigns} />} />
-    <Route path="/campaigns/:id" element={<CampaignDetail user={user} />} />
+      <Route path="/" element={<Home msgAlert={msgAlert} user={user} />} />
+      <Route path="/profile" element={<Profile user={user} />} />
+		  <Route path="/campaigns" element={<CampaignList user={user} allCampaigns={allCampaigns} reloadCampaign={getCampaign} />} />
+      <Route path="/campaigns/:id" element={<CampaignDetail user={user} />} />
         
-		
-		
-		
-		
-		
 		
 		<Route
           path="/sign-up"

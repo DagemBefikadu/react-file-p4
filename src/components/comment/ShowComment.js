@@ -2,6 +2,8 @@ import React from 'react'
 
 
 export default function ShowComment(props) {
+    //     console.log("owner id",props.comment.owner._id)
+    // console.log("user id",props.user)
     if (props.user && props.comment.owner._id === props.user._id){
         return (
             <>

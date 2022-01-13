@@ -1,4 +1,5 @@
 import React from 'react'
+import NewCampaign from './NewCampaign'
 import SingleCampaign from './SingleCampaign'
 
 export default function CampaignList(props) {
@@ -10,6 +11,7 @@ export default function CampaignList(props) {
         <div>
             <h1>List of Campaigns go Here</h1>
             {foundCampaigns}
+            <NewCampaign user={props.user} reloadCampaign={props.reloadCampaign}/>
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import  { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import apiUrl from '../../apiConfig'
-import ShowComment from "../comment/ShowComment";
+// import ShowComment from "../comment/ShowComment";
 import Comment from "../comment/Comment";
 
 //import axios
-import axios from "axios";
+// import axios from "axios";
 
 export default function CampaignDetail(props) {
     
@@ -31,7 +31,7 @@ export default function CampaignDetail(props) {
         .then(response=>response.json())
         .then(foundCampaign => {
             setDetailedCampaign(foundCampaign.campaign)
-            // console.log('singleItem ', foundCampaign.campaign)
+            console.log('singleItem with comment ', foundCampaign.campaign.comment)
         })
 
     }
@@ -85,7 +85,7 @@ export default function CampaignDetail(props) {
             <h4>
             Comment Section: asfdsf
             </h4>
-            {<Comment user ={props.user}/>}
+            {<Comment campaignId = {newParam.id} user ={props.user}/>}
             {/* {commentList} */}
         </div>
     )

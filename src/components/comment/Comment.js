@@ -22,16 +22,19 @@ export default function Comment(props) {
             .then((response) => response.json())
             .then((foundComments) => {
             setAllComment(foundComments.comments);
-            // console.log(foundComments)
+            console.log("list of comment",foundComments.comments)
             })
             .catch((err) => {
             console.log(err);
             });
     }
 
+    // let caId = props.campaignId
+
     const deleteComment = (cId) => {
+        console.log(cId)
         axios ({
-          url: apiUrl + `/comments/${cId}`,
+          url: `http://localhost:8000/campaigns/${newParam.id}/comments/${cId}`,
           method: "DELETE",
           headers: {
             Authorization: `Token token=${props.user.token}`,
@@ -45,7 +48,7 @@ export default function Comment(props) {
       }
   
       let commentList = allComment.map((c) => {
-          console.log(c);
+          console.log("this is a comment",c);
           return (
             <ShowComment
               comment={c}
@@ -60,7 +63,7 @@ export default function Comment(props) {
         <div>
             {commentList}
             <hr />
-            <NewComment user={props.user} />
+            <NewComment refreshComment={getComment} user={props.user} />
         </div>
     )
 }
