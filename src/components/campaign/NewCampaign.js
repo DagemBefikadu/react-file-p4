@@ -87,7 +87,7 @@ export default function NewCampaign(props) {
                 <input type="text" id="image" name="image" />
             </div>
             <div>
-                <input type="submit" value="Post" />
+                <input type="submit" value="Create" />
             </div>
             </form>  
         </>

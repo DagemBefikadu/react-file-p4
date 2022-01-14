@@ -4,7 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
     color: 'white',
-    textDecoration: 'none'
+    textDecoration: 'none',
+	marginLeft:  '30px'
 }
 const authenticatedOptions = (
 	<>
@@ -49,19 +50,22 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
 	<>
-		<Nav.Link>
+		<Nav.Link >
 			<Link to='/' style={linkStyle}>
 				Home
 			</Link>
-			<Link to='/campaigns' style={linkStyle}>
+			<Link to='/campaigns' style={linkStyle} >
 				Campaigns
+			</Link>
+			<Link to='/about' style={linkStyle}>
+				About
 			</Link>
 		</Nav.Link>
 	</>
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='primary' variant='dark' expand='md'>
+	<Navbar bg='primary' variant='dark' expand='md' >
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
                 react-auth-template
@@ -71,7 +75,7 @@ const Header = ({ user }) => (
 		<Navbar.Collapse id='basic-navbar-nav'>
 			<Nav className='ml-auto'>
 				{user && (
-					<span className='navbar-text mr-2'>Welcome, {user.email}</span>
+					<span className='navbar-text mr-2'>Welcome, {user.name}</span>
 				)}
 				{alwaysOptions}
 				{user ? authenticatedOptions : unauthenticatedOptions}

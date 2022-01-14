@@ -18,6 +18,7 @@ import CampaignDetail from "./components/campaign/CampaignDetail"
 import Profile from "./components/profile/Profile"
 import EditCampaign from "./components/campaign/EditCampaign";
 import EditComment from "./components/comment/EditComment";
+import About from "./components/about/About";
 
 
 const App = () => {
@@ -69,9 +70,10 @@ const App = () => {
       <Routes>
       <Route path="/" element={<Home msgAlert={msgAlert} user={user} />} />
       <Route path="/profile" element={<Profile user={user} reloadCampaign={getCampaign}/>} />
+      <Route path="/profile/edit/:id" element={<EditCampaign user={user}/>} />
+      <Route path="/about" element={<About user={user}/>}/>
 		  <Route path="/campaigns" element={<CampaignList user={user} allCampaigns={allCampaigns} reloadCampaign={getCampaign} />} />
       <Route path="/campaigns/:id" element={<CampaignDetail user={user} />} />
-      <Route path="/profile/edit/:id" element={<EditCampaign user={user}/>} />
       <Route path="/campaigns/:campaignId/edit/:id" element={<EditComment user={user} />}/>
 
         

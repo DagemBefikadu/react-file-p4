@@ -4,6 +4,7 @@ import  { useState, useEffect } from 'react';
 import apiUrl from '../../apiConfig'
 // import ShowComment from "../comment/ShowComment";
 import Comment from "../comment/Comment";
+import ContactForm from "../about/ContactForm";
 
 //import axios
 // import axios from "axios";
@@ -87,6 +88,7 @@ export default function CampaignDetail(props) {
             </h4>
             {<Comment campaignId = {newParam.id} user ={props.user}/>}
             {/* {commentList} */}
+            <ContactForm user={props.user} />
         </div>
     )
 }
