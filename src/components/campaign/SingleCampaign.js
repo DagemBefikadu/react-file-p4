@@ -1,15 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button, Card } from 'react-bootstrap/'
+const linkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+	marginRight:  '30px'
+}
+
 
 export default function SingleCampaign(props) {
     return (
         <div>
-            <ul>
-                <li>Name: {props.campaignItem.name}</li>
+            <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={props.campaignItem.image}  />
+            <Card.Body>
+            <Card.Title> Name: {props.campaignItem.name}</Card.Title>
+            <Card.Text>Cause: {props.campaignItem.cause}</Card.Text>    
                 {/* <li><img src={props.campaignItem.image} /></li> */}
-                <li>Image</li>
-            </ul>
-            <button>Detail: <Link to={`/campaigns/${props.campaignItem._id}`}>{props.campaignItem.name}</Link></button>
+            <Button>Detail: <Link style={linkStyle} to={`/campaigns/${props.campaignItem._id}`}>{props.campaignItem.name}</Link></Button>
+            </Card.Body>
+            </Card>
         </div>
     )
 }

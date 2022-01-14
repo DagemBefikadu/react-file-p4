@@ -5,6 +5,7 @@ import apiUrl from '../../apiConfig'
 import axios from "axios";
 import ShowComment from "./ShowComment";
 import NewComment from './NewComment';
+import ShowContact from '../contact/ShowContact';
 
 export default function Comment(props) {
     console.log("this is",props)
@@ -28,6 +29,32 @@ export default function Comment(props) {
             console.log(err);
             });
     }
+
+
+//     const [detailedContact, setDetailedContact] = useState([])
+
+//     useEffect(() => {
+//      console.log('getting contacts ')
+//      getContact()
+//    }, []);
+
+
+
+//  const getContact = () => {
+//      console.log("here is the campaignId", newParam)
+//      // console.log("here is the campaignId", campaignId._id)
+//     //  console.log("here is the campaignId", campaignId)
+//      // console.log("here is cId", contactId)
+//      fetch(`http://localhost:8000/campaigns/${newParam}/contacts`)
+//      .then((response)=>response.json())
+//      .then((foundContact) => {
+//          setDetailedContact(foundContact)
+//          console.log('single Contact', foundContact)
+//      })
+//      .catch((err) => {
+//          console.log(err);
+//      });
+//  }
 
     // let caId = props.campaignId
 
@@ -62,8 +89,9 @@ export default function Comment(props) {
     return (
         <div>
             {commentList}
-            <hr />
             <NewComment refreshComment={getComment} user={props.user} />
+            {/* <p>detailedContact</p> */}
+            {/* <ShowContact params={newParam} /> */}
         </div>
     )
 }

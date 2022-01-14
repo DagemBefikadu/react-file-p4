@@ -9,9 +9,9 @@ export default function CampaignList(props) {
     })
     return (
         <div>
-            <h1>List of Campaigns go Here</h1>
-            {foundCampaigns}
+            <h1>Organizations: </h1>
             <NewCampaign user={props.user} reloadCampaign={props.reloadCampaign}/>
+            {foundCampaigns}
         </div>
     )
 }

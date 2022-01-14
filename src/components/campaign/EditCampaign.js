@@ -3,8 +3,13 @@ import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import apiUrl from '../../apiConfig';
+import { Form, Modal, Button, } from 'react-bootstrap/'
 
 export default function EditCampaign(props) {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const [oldCampaign, setOldCampaign] = useState([])
 
     useEffect(() => {
@@ -78,40 +83,48 @@ export default function EditCampaign(props) {
 
     return (
         <>
-        <h1>Edit Name Campaign</h1>
-          <form onSubmit={editCampaign}>
-            <div>
-                <label htmlFor="name">names</label>
-                <input type="text" id="name" name="name" value={oldCampaign.name} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="cause">cause</label>
-                <input type="text" id="cause" name="cause" value={oldCampaign.cause} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="item">item</label>
-                <input type="text" id="item" name="item" value={oldCampaign.item} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="location">location</label>
-                <input type="text" id="location" name="location" value={oldCampaign.location} onChange={handleChange} />
-            </div>
-            <div>
-                <label htmlFor="website">website</label>
-                <input type="text" id="website" name="website" value={oldCampaign.website} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="category">category</label>
-                <input type="text" id="category" name="category" value={oldCampaign.category} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="image">image</label>
-                <input type="text" id="image" name="image" value={oldCampaign.image} onChange={handleChange}/>
-            </div>
-            <div>
-                <input type="submit" value="Post" />
-            </div>
-            </form>  
+        <Button variant="primary" onClick={handleShow}>
+        New Campaign
+        </Button>
+        <h1></h1>
+        <Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton>
+            <Modal.Title>Edit Name Campaign</Modal.Title>
+            </Modal.Header>
+          <Form onSubmit={editCampaign}>
+            <Form.Group>
+                <Form.Label htmlFor="name">names</Form.Label>
+                <Form.Control type="text" id="name" name="name" value={oldCampaign.name} onChange={handleChange}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="cause">cause</Form.Label>
+                <Form.Control type="text" id="cause" name="cause" value={oldCampaign.cause} onChange={handleChange}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="item">item</Form.Label>
+                <Form.Control type="text" id="item" name="item" value={oldCampaign.item} onChange={handleChange}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="location">location</Form.Label>
+                <Form.Control type="text" id="location" name="location" value={oldCampaign.location} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="website">website</Form.Label>
+                <Form.Control type="text" id="website" name="website" value={oldCampaign.website} onChange={handleChange}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="category">category</Form.Label>
+                <Form.Control type="text" id="category" name="category" value={oldCampaign.category} onChange={handleChange}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="image">image</Form.Label>
+                <Form.Control type="text" id="image" name="image" value={oldCampaign.image} onChange={handleChange}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Control type="submit" value="Post" />
+            </Form.Group>
+            </Form>  
+            </Modal>
         </>
     )
 }

@@ -78,13 +78,12 @@ export default function CampaignDetail(props) {
     
     return (
         <div>
-            <h1>detail page</h1>
             <h1>{detailedCampaign.name}</h1>
             <p>{detailedCampaign.cause}</p>
             <small>{detailedCampaign.location}</small>
             <hr />
             <h4>
-            Comment Section: asfdsf
+            Comment Section: 
             </h4>
             {<Comment campaignId = {newParam.id} user ={props.user}/>}
             {/* {commentList} */}

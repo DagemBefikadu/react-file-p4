@@ -3,8 +3,14 @@ import apiUrl from '../../apiConfig';
 import { useState } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
+import { Form, Modal, Button, Container, Col, R, Formow } from 'react-bootstrap/'
+
 
 export default function ContactForm(props) {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const params = useParams()
 
@@ -41,28 +47,35 @@ export default function ContactForm(props) {
 
     return (
         <>
-        <h1>Contact Form</h1>
-          <form onSubmit={createComment}>
-            <div>
-                <label htmlFor="firstName">firstName</label>
-                <input type="text" id="firstName" name="firstName" />
-            </div>
-            <div>
-                <label htmlFor="lastName">lastName</label>
-                <input type="text" id="lastName" name="lastName" />
-            </div>
-            <div>
-                <label htmlFor="email">email</label>
-                <input type="text" id="email" name="email" />
-            </div>
-            <div>
-                <label htmlFor="message">message</label>
-                <input type="text" id="message" name="message" />
-            </div>
-            <div>
-                <input type="submit" value="Post" />
-            </div>
-            </form>  
+        <Button variant="primary" onClick={handleShow}>
+            Contact Us
+        </Button>
+        <Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton>
+            <Modal.Title>Edit Name Campaign</Modal.Title>
+            </Modal.Header>
+          <Form onSubmit={createComment}>
+            <Form.Group>
+                <Form.Label htmlFor="firstName">firstName</Form.Label>
+                <Form.Control type="text" id="firstName" name="firstName" />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="lastName">lastName</Form.Label>
+                <Form.Control type="text" id="lastName" name="lastName" />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="email">email</Form.Label>
+                <Form.Control type="text" id="email" name="email" />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="message">message</Form.Label>
+                <Form.Control type="text" id="message" name="message" />
+            </Form.Group>
+            <Form.Group>
+                <Form.Control type="submit" value="Post" />
+            </Form.Group>
+            </Form>  
+            </Modal>
         </>
     )
 }

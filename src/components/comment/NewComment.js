@@ -3,8 +3,14 @@ import { useParams } from "react-router-dom";
 import { useState ,useEffect} from 'react'
 import apiUrl from '../../apiConfig'
 import axios from "axios";
+import { Form, Modal, Button, Container, } from 'react-bootstrap/'
+
 
 export default function NewComment(props) {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const [addComment, setAddComment] = useState([])
 
     let newParam = useParams()  
@@ -36,17 +42,29 @@ export default function NewComment(props) {
 }
 
     return (
-        <div>
-            <form onSubmit={createdComment}>
-                <div>
-                    <label htmlFor="newComment"></label>
-                    <input type="text" id="newComment" name="newComment" />
-                    <button>Test</button>
-                </div>
-                <div>
-                    <input type="submit"></input>
-                </div>
-            </form>
-        </div>
+        <>
+        <Button variant="warning" onClick={handleShow}>
+        Add Comment
+        </Button>
+        <Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton>
+            <Modal.Title>Create A Comment</Modal.Title>
+            </Modal.Header>
+            <Form.Text className="text-muted">
+      Please sign-In to post your comment.
+    </Form.Text>
+        <Form.Group>
+            <Form onSubmit={createdComment}>
+                <Form.Group>
+                    <Form.Label  htmlFor="newComment"></Form.Label>
+                    <Form.Control className="mb-3"  type="text" id="newComment" name="newComment" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Control type="submit"></Form.Control>
+                </Form.Group>
+            </Form>
+        </Form.Group>
+        </Modal>
+        </>
     )
 }
