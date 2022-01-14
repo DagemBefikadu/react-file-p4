@@ -14,8 +14,13 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Link>
 		<Nav.Link>
-			<Link to='/profile/edit' style={linkStyle}>
+			<Link to='/profile/edit/:id' style={linkStyle}>
 				Edit
+			</Link>
+		</Nav.Link>
+		<Nav.Link>
+			<Link to='/campaigns/edit/:id' style={linkStyle}>
+				comment
 			</Link>
 		</Nav.Link>
 		<Nav.Link>
