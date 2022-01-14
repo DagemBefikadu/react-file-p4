@@ -5,6 +5,10 @@ import apiUrl from '../../apiConfig'
 // import ShowComment from "../comment/ShowComment";
 import Comment from "../comment/Comment";
 import ContactForm from "../about/ContactForm";
+const groundStyle = {
+    color: 'white',
+}
+
 
 //import axios
 // import axios from "axios";
@@ -78,11 +82,11 @@ export default function CampaignDetail(props) {
     
     return (
         <div>
-            <h1>{detailedCampaign.name}</h1>
-            <p>{detailedCampaign.cause}</p>
-            <small>{detailedCampaign.location}</small>
+            <h1 style={groundStyle}>{detailedCampaign.name}</h1>
+            <p style={groundStyle}>{detailedCampaign.cause}</p>
+            <small style={groundStyle}>{detailedCampaign.location}</small>
             <hr />
-            <h4>
+            <h4 style={groundStyle}>
             Comment Section: 
             </h4>
             {<Comment campaignId = {newParam.id} user ={props.user}/>}

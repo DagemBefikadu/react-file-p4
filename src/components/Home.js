@@ -1,4 +1,5 @@
 import Image from 'react-bootstrap/Image'
+import { Container } from 'react-bootstrap/'
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
@@ -6,7 +7,9 @@ const Home = (props) => {
 	return (
 		<>
 			{/* <h2>Home Page </h2> */}
-			<Image fluid src="https://wallpapercat.com/9/full/8/3/1/1706439.jpg?id=1628921852" />
+			<Container>
+			<Image fluid src="https://staticsb.we.org/f/52095/1152x640/d5e7b81505/ethiopia-carousel-10.jpg" />
+			</Container>
 		</>
 	)
 }

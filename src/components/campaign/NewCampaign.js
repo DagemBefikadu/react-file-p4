@@ -4,6 +4,10 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import apiUrl from '../../apiConfig';
 import { Form, Modal, Button, Container, Col, Row } from 'react-bootstrap/'
+const backgroundStyle = {
+    color: 'white',
+    backgroundColor: '#C4A69D',
+}
 
 export default function NewCampaign(props) {
     const [show, setShow] = useState(false);
@@ -62,7 +66,7 @@ export default function NewCampaign(props) {
     
     return (
         <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button size="sm"  className="mb-3 mt-2" style={backgroundStyle} variant="primary" onClick={handleShow}>
         New Campaign
         </Button>
         <Container>

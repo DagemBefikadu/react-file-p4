@@ -4,6 +4,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig';
 import MyCampaigns from './MyCampaigns';
 import { useNavigate } from "react-router-dom";
+import '../../../src/app.css'
 
 export default function CreatedCampaigns(props) {
     const [myCampaigns, setMyCampaigns] = useState([])

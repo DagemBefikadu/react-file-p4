@@ -88,7 +88,8 @@ export default function Comment(props) {
 
     return (
         <div>
-            {commentList}
+            {commentList} 
+            <br />
             <NewComment refreshComment={getComment} user={props.user} />
             {/* <p>detailedContact</p> */}
             {/* <ShowContact params={newParam} /> */}
