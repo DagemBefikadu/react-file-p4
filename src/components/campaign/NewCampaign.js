@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState ,useEffect} from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import apiUrl from '../../apiConfig';
-import { Form, Modal, Button, Container, Col, Row } from 'react-bootstrap/'
+import { Form, Modal, Button, Container} from 'react-bootstrap/'
 const backgroundStyle = {
     color: 'white',
     backgroundColor: '#C4A69D',
@@ -15,9 +15,9 @@ export default function NewCampaign(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
-    const [newCampaign, setNewCampaign] = useState([])
+    // const [newCampaign, setNewCampaign] = useState([])
     
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     
     const createCampaign = (e) => {
         e.preventDefault()

@@ -73,6 +73,7 @@ const App = () => {
       <Route path="/" element={<Home msgAlert={msgAlert} user={user} />} />
       <Route path="/profile" element={<Profile user={user} reloadCampaign={getCampaign}/>} />
       <Route path="/profile/edit/:id" element={<EditCampaign user={user}/>} />
+      <Route path="/favorites" ></Route>
       <Route path="/about" element={<About user={user}/>}/>
       <Route path="/contact" element={<ShowContact user={user}/>}/>
 		  <Route path="/campaigns" element={<CampaignList user={user} allCampaigns={allCampaigns} reloadCampaign={getCampaign} />} />

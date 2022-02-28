@@ -71,7 +71,7 @@ const Header = ({ user }) => (
 	<Navbar style={backgroundColor} expand='md' >
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-                EthioConnect
+                EthioOutReach
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />

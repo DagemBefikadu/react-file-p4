@@ -3,7 +3,7 @@ import apiUrl from '../../apiConfig';
 import { useState } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
-import { Form, Modal, Button, Container, Col, R, Formow } from 'react-bootstrap/'
+import { Form, Modal, Button } from 'react-bootstrap/'
 
 
 export default function ContactForm(props) {

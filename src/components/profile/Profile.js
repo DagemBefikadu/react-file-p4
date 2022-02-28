@@ -1,9 +1,10 @@
 import React from 'react'
-import  { useState, useEffect } from 'react';
-import { useParams, useLocation } from "react-router-dom";
-import apiUrl from '../../apiConfig'
+// import  { useState, useEffect } from 'react';
+// import { useParams, useLocation } from "react-router-dom";
+// import apiUrl from '../../apiConfig'
 import CreatedCampaigns from './CreatedCampaigns'
-import axios from 'axios'
+// import axios from 'axios'
+// I dont think i need axuis
 
 export default function Profile(props) {
     // console.log("this is profile", props)

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState ,useEffect} from 'react'
 import apiUrl from '../../apiConfig'
 import axios from "axios";
-import { Form, Modal, Button, Container, } from 'react-bootstrap/'
+import { Form, Modal, Button, } from 'react-bootstrap/'
 
 
 export default function NewComment(props) {
@@ -11,7 +11,7 @@ export default function NewComment(props) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [addComment, setAddComment] = useState([])
+    // const [addComment, setAddComment] = useState([])
 
     let newParam = useParams()  
 
