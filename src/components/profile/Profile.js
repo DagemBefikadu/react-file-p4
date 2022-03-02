@@ -4,7 +4,7 @@ import React from 'react'
 // import apiUrl from '../../apiConfig'
 import CreatedCampaigns from './CreatedCampaigns'
 // import axios from 'axios'
-// I dont think i need axuis
+
 
 export default function Profile(props) {
     // console.log("this is profile", props)
