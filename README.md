@@ -17,19 +17,10 @@ Install node packages for the helpingHand React app: ```npm i axios boostrap rea
 
 The users of this applications would be anyone in Ethiopia who would want to get there non-profit or orginization out in the world. They would have the ability to log-in and create a campaign with criterias like (name,cause, image),  once those fields are filled out there campaign will show up for all users to see. Any user can personally contact them using the contact form and that data will only be avaialble to the campaign creator to see. All other users who are non campaign owners who are logged can look up a campaign baised off categories or description, add comments and delete comments. 
 
-## Wire Frames
-
-### User Journey
-
-
-### Application Views
+## Link to Express File
+https://github.com/DagemBefikadu/express-file
 
 
-### React Components
-
-
-
-## Overcoming Roadblocks
 
 
 
