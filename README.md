@@ -20,7 +20,7 @@ The users of this applications would be anyone in Ethiopia who would want to get
 ## Link to Express File
 https://github.com/DagemBefikadu/express-file
 
-## Link WireFram
+## Link WireFrame
 https://lucid.app/lucidchart/d684c2d9-42aa-4a52-946a-973530286ac1/edit?from_internal=true
 
 
